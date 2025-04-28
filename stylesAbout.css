@@ -1,0 +1,97 @@
+  :root {
+            --primary-red: #D81F38;
+            --primary-black: #1A1A1A;
+            --primary-gray: #F5F5F5;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .font-heading {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .text-primary-red {
+            color: var(--primary-red);
+        }
+        
+        .text-primary-black {
+            color: var(--primary-black);
+        }
+        
+        .bg-primary-red {
+            background-color: var(--primary-red);
+        }
+        
+        .bg-primary-black {
+            background-color: var(--primary-black);
+        }
+        
+       
+        
+        .animated-underline:hover::after {
+            width: 100%;
+        }
+        
+        .hero-banner {
+            background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('/images/hero-about.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+        }
+        
+        /* .section-heading::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-red);
+    margin: 20px auto 0; 
+} */
+
+        
+        .team-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .value-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .value-card:hover .value-icon {
+            transform: scale(1.15);
+        }
+        
+        .stats-section {
+            background-attachment: fixed;
+        }
+        
+        .testimonial-card {
+            transition: transform 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: scale(1.03);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-red);
+            color: white;
+            font-weight: 600;
+            padding: 12px 28px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: #c01830;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(216, 31, 56, 0.3);
+        }

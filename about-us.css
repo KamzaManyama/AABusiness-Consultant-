@@ -1,0 +1,271 @@
+/* about-us.css */
+
+.about-us-section {
+    width: 100%;
+    padding-top: 80px; /* Adjust padding to account for fixed navigation */
+    background-color: #fff;
+}
+
+.about-us-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Image Side */
+.about-us-image {
+    width: 50%;
+    height: auto;
+    overflow: hidden;
+}
+
+.about-us-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Content Side */
+.about-us-content {
+    width: 50%;
+    padding: 6rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-us-label {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #C41E3A; /* Primary Red */
+    margin-bottom: 1rem;
+}
+
+.about-us-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333; /* Primary Black (or a dark gray) */
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.about-us-subheading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.divider {
+    width: 80px;
+    height: 4px;
+    background-color: #DAA520; /* Primary Gold */
+    margin-bottom: 2rem;
+}
+
+.about-us-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.about-us-values {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.about-us-values li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .about-us-container {
+        flex-direction: column;
+    }
+
+    .about-us-image, .about-us-content {
+        width: 100%;
+    }
+
+    .about-us-image {
+        height: 40vh;
+    }
+
+    .about-us-content {
+        padding: 3rem 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-us-heading {
+        font-size: 2rem;
+    }
+
+    .about-us-subheading {
+        font-size: 1.3rem;
+    }
+
+    .about-us-description {
+        font-size: 1rem;
+    }
+
+    .about-us-values li {
+        font-size: 1rem;
+    }
+}
+
+
+    .careers-section {
+        width: 100%;
+        height: 100vh;
+        background-color: #fff;
+    }
+    
+    .careers-container {
+        display: flex;
+        height: 100%;
+    }
+    
+    /* Image Side */
+    .careers-image {
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+    }
+    
+    .careers-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    /* Content Side */
+    .careers-content {
+        width: 50%;
+        padding: 6rem 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .careers-label {
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #C41E3A;
+        margin-bottom: 1rem;
+    }
+    
+    .careers-heading {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+    }
+    
+    .divider {
+        width: 80px;
+        height: 4px;
+        background-color: #DAA520;
+        margin-bottom: 2rem;
+    }
+    
+    .careers-description {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #555;
+        margin-bottom: 2.5rem;
+    }
+    
+    .careers-benefits {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+    
+    .benefit-item {
+        display: flex;
+        align-items: center;
+    }
+    
+    .benefit-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #DAA520;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1rem;
+    }
+    
+    .benefit-icon i {
+        color: white;
+        font-size: 1.25rem;
+    }
+    
+    .benefit-item h4 {
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #333;
+    }
+    
+    .cta-button {
+        display: inline-block;
+        background-color: #C41E3A;
+        color: white;
+        font-weight: 600;
+        padding: 1rem 2rem;
+        border-radius: 0.25rem;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: background-color 0.3s ease;
+        text-align: center;
+        max-width: 250px;
+    }
+    
+    .cta-button:hover {
+        background-color: #a01830;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+        .careers-container {
+            flex-direction: column;
+        }
+        
+        .careers-image, .careers-content {
+            width: 100%;
+        }
+        
+        .careers-image {
+            height: 40vh;
+        }
+        
+        .careers-content {
+            padding: 3rem 2rem;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .careers-benefits {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+    }
+
+    

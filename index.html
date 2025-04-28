@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AA Business Consultants</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Stying.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <nav class="fixed top-0 w-full p-6 z-50 transition-all duration-300" id="main-nav">
+    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/#" class="flex items-center flex-shrink-0">
+        <span class="text-2xl font-bold text-white font-heading transition-colors duration-300" id="logo-first">AA</span>
+        <span class="text-2xl font-bold text-white font-heading ml-1 transition-colors duration-300" id="logo-second">Business Consultants</span>
+    </a>
+
+    <div class="hidden md:flex flex-grow justify-center space-x-6 items-center">
+        <a href="#" class="text-white hover:text-primary-gold transition duration-300 animated-underline nav-link">Home</a>
+        <a href="#about" class="text-white hover:text-primary-gold transition duration-300 animated-underline nav-link">About</a>
+        <a href="#services" class="text-white hover:text-primary-gold transition duration-300 animated-underline nav-link">Transformation</a>
+        <a href="#industries" class="text-white hover:text-primary-gold transition duration-300 animated-underline nav-link">Services</a>
+        <a href="#insights" class="text-white hover:text-primary-gold transition duration-300 animated-underline nav-link">Insights</a>
+        <a href="#contact" class="text-white hover:text-primary-gold transition duration-300 animated-underline nav-link">Contact</a>
+    </div>
+
+    <div class="hidden md:flex ml-auto">
+        <a href="#consultation" class="bg-primary-red text-white font-semibold py-2 px-6 rounded-md hover:bg-opacity-90 transition duration-300 btn-primary">Book a Consultation</a>
+    </div>
+
+    <button class="md:hidden hamburger-menu focus:outline-none">
+        <div class="bar bg-white w-6 h-0.5 mb-1.5 transition-colors duration-300"></div>
+        <div class="bar bg-white w-6 h-0.5 mb-1.5 transition-colors duration-300"></div>
+        <div class="bar bg-white w-6 h-0.5 transition-colors duration-300"></div>
+    </button>
+</div>
+
+
+    <div class="md:hidden absolute top-full left-0 right-0 bg-white shadow-md rounded-b-md overflow-hidden hidden" id="mobile-menu">
+        <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary-red transition duration-300 border-b border-gray-100">Home</a>
+        <a href="#about" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary-red transition duration-300 border-b border-gray-100">About Us</a>
+        <a href="#services" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary-red transition duration-300 border-b border-gray-100">Transformation</a>
+        <a href="#industries" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary-red transition duration-300 border-b border-gray-100">Services</a>
+        <a href="#insights" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary-red transition duration-300 border-b border-gray-100">Insights</a>
+        <a href="#contact" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary-red transition duration-300 border-b border-gray-100">Contact</a>
+        <a href="#consultation" class="block px-4 py-3 bg-primary-red text-white font-semibold hover:bg-opacity-90 transition duration-300">Book a Consultation</a>
+    </div>
+</nav>
+
+<!-- JavaScript for Scroll Effect -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const nav = document.getElementById('main-nav');
+        const logoFirst = document.getElementById('logo-first');
+        const logoSecond = document.getElementById('logo-second');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const hamburgerBars = document.querySelectorAll('.bar');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                // Scrolled state
+                nav.classList.add('bg-white', 'shadow-md');
+                nav.classList.remove('bg-transparent');
+                logoFirst.classList.add('text-primary-red');
+                logoFirst.classList.remove('text-white');
+                logoSecond.classList.add('text-primary-black');
+                logoSecond.classList.remove('text-white');
+                
+                // Change all nav links to dark color
+                navLinks.forEach(link => {
+                    link.classList.add('text-gray-700');
+                    link.classList.remove('text-white');
+                    link.classList.add('hover:text-primary-red');
+                    link.classList.remove('hover:text-primary-gold');
+                });
+                
+                // Change hamburger menu color
+                hamburgerBars.forEach(bar => {
+                    bar.classList.add('bg-primary-red');
+                    bar.classList.remove('bg-white');
+                });
+            } else {
+                // Transparent state (top of page)
+                nav.classList.remove('bg-white', 'shadow-md');
+                nav.classList.add('bg-transparent');
+                logoFirst.classList.remove('text-primary-red');
+                logoFirst.classList.add('text-white');
+                logoSecond.classList.remove('text-primary-black');
+                logoSecond.classList.add('text-white');
+                
+                // Change all nav links to white color
+                navLinks.forEach(link => {
+                    link.classList.remove('text-gray-700');
+                    link.classList.add('text-white');
+                    link.classList.remove('hover:text-primary-red');
+                    link.classList.add('hover:text-primary-gold');
+                });
+                
+                // Change hamburger menu color
+                hamburgerBars.forEach(bar => {
+                    bar.classList.remove('bg-primary-red');
+                    bar.classList.add('bg-white');
+                });
+            }
+        });
+        
+        // Handle mobile menu
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        hamburgerMenu.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Trigger scroll event initially to set correct state based on page position
+        window.dispatchEvent(new Event('scroll'));
+    });
+</script>
+
+    <!-- Hero Section -->
+    <section class="hero relative h-screen flex items-center bg-cover bg-center" style="background-image: url('images/HeroBackground.jpg');">
+        <!-- Semi-transparent overlay with gradient -->
+        <div class="absolute inset-0 bg-gradient-to-r from-black to-transparent opacity-100"></div>
+
+        <!-- Content -->
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-2xl hero-text">
+                <span class="inline-block text-primary-gold uppercase tracking-wider mb-3 font-semibold text-sm fade-in" style="animation-delay: 0.2s;">AA Business Consultants</span>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 font-heading slide-up" style="animation-delay: 0.4s;">
+                    <span style="animation-delay: 0.5s;">Strategic</span> 
+                    <span style="animation-delay: 0.7s;">Solutions</span> 
+                    <span style="animation-delay: 0.9s;">for</span> 
+                    <span style="animation-delay: 1.1s;">Business</span> 
+                    <span style="animation-delay: 1.3s;">Growth</span>
+                </h1>
+                <p class="text-lg text-gray-200 mb-8 font-body slide-up" style="animation-delay: 0.8s;">Your trusted partner in achieving sustainable success and navigating complex challenges in today's dynamic business landscape.</p>
+                <div class="flex flex-wrap gap-4 slide-up" style="animation-delay: 1.2s;">
+                    <a href="#consultation" class="bg-primary-red text-white font-semibold py-3 px-8 rounded-md hover:bg-opacity-90 transition duration-300 btn-primary">Book a Consultation</a>
+                    <a href="#about" class="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-md hover:bg-white hover:text-black transition duration-300">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Animated Scroll Down Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+            <a href="#about" class="flex flex-col items-center text-white opacity-80 hover:opacity-100 transition duration-300">
+                <span class="mb-2 text-sm">Scroll Down</span>
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+        <div class="flex flex-col items-center mb-12 reveal">
+            <span class="inline-block text-red-700 uppercase tracking-wider mb-2 font-semibold text-sm">Who We Are</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">About AA Business Consultants</h2>
+            <div class="w-20 h-1 bg-yellow-500"></div>
+        </div>
+
+        <!-- About Content Section -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="reveal">
+                <h3 class="text-2xl font-semibold text-red-700 mb-6">Our Vision</h3>
+                <p class="text-gray-700 mb-6 leading-relaxed">
+                  AA Business Consultants is a South African-based consultancy dedicated to empowering organizations through expert business support services. We specialize in public sector policy development, strategic planning, and ISO management systems implementation. Our comprehensive offerings include professional consulting services, capacity-building training workshops, and in-depth research solutions designed to enhance organizational effectiveness, strengthen governance, and ensure regulatory compliance. Serving a diverse client base including government departments, state-owned enterprises, municipalities, and private sector organizations we are committed to delivering value-driven solutions that promote sustainable growth and operational excellence.
+                </p>
+                <div class="flex mt-8">
+                    <a href="AboutPage.html" class="flex items-center text-red-700 font-semibold hover:text-yellow-500 transition duration-300">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="relative rounded-lg overflow-hidden shadow-xl transform transition duration-500 hover:scale-105 reveal">
+                <img src="images/AboutPages.jpg" alt="About Image" class="w-full h-auto">
+                <!-- Diagonal overlay -->
+                <div class="absolute bottom-0 left-0 w-full h-1/4 bg-gradient-to-tr from-red-700 to-transparent"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Clients Section -->
+<section class="py-12 bg-primary-red text-white">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-8">OUR CLIENTS</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 text-center">
+            <div class="client-item reveal">
+                <div class="mb-3 mx-auto w-16 h-16 bg-white rounded-full flex items-center justify-center">
+                    <img src="images/Dynamic_Angular_R_Logo____For_Sale-removebg-preview.png" alt="TAK logo" class="w-12 h-12" />
+                </div>
+                <p class="text-sm font-medium">TAK Business Intelligence</p>
+            </div>
+            <div class="client-item reveal">
+                <div class="mb-3 mx-auto w-16 h-16 bg-white rounded-full flex items-center justify-center">
+                    <img src="images/0261e1f6-d91a-4f48-a675-7b3e429473a6-removebg-preview.png" alt="MULASE logo" class="w-12 h-12" />
+                </div>
+                <p class="text-sm font-medium">MULASE Business Connection</p>
+            </div>
+            <div class="client-item reveal">
+                <div class="mb-3 mx-auto w-16 h-16 bg-white rounded-full flex items-center justify-center">
+                    <img src="images/Arthur_Castell-removebg-preview.png" alt="Managa logo" class="w-12 h-12" />
+                </div>
+                <p class="text-sm font-medium">Managa Sibro Family Trust</p>
+            </div>
+            <div class="client-item reveal">
+                <div class="mb-3 mx-auto w-16 h-16 bg-white rounded-full flex items-center justify-center">
+                    <img src="images/b831b91b-2ca8-44f1-b492-3b142afbc0e2-removebg-preview.png" alt="BeeZee logo" class="w-12 h-12" />
+                </div>
+                <p class="text-sm font-medium">BeeZee Holdings PTY Ltd</p>
+            </div>
+            <div class="client-item reveal">
+                <div class="mb-3 mx-auto w-16 h-16 bg-white rounded-full flex items-center justify-center">
+                    <img src="images/Custom_Y2k_Logo_Design___-removebg-preview.png" alt="KGS logo" class="w-12 h-12" />
+                </div>
+                <p class="text-sm font-medium">KGS Corporation</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+        <div class="flex flex-col items-center mb-16 reveal">
+            <span class="inline-block text-primary-red uppercase tracking-wider mb-2 font-semibold text-sm">Our Approach</span>
+            <h2 class="text-3xl md:text-4xl font-bold font-heading text-center text-primary-black mb-4">The Transformation Journey</h2>
+            <div class="w-20 h-1 bg-primary-gold"></div>
+        </div>
+        
+        <!-- Interactive Process Journey -->
+        <div class="relative">
+            <!-- Journey Path -->
+            <div class="hidden lg:block absolute top-1/2 left-0 w-full h-2 bg-gray-200 -translate-y-1/2 z-0"></div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-6 relative z-10">
+                <!-- Step 1: Assessment -->
+                <div class="journey-step reveal" data-step="1">
+                    <div class="flex flex-col items-center">
+                        <div class="w-20 h-20 rounded-full bg-primary-red text-white flex items-center justify-center mb-6 shadow-lg cursor-pointer hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-search text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3 text-center">Assessment</h3>
+                        <div class="journey-content bg-white p-6 rounded-lg shadow-md w-full">
+                            <p class="text-gray-600 mb-4">We conduct a comprehensive analysis of your current operations, identifying strengths, challenges, and opportunities with precision.</p>
+                            <ul class="text-gray-600 space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-gold mt-1 mr-2"></i>
+                                    <span>Financial health evaluation</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-gold mt-1 mr-2"></i>
+                                    <span>Risk profile assessment</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-gold mt-1 mr-2"></i>
+                                    <span>Operational efficiency analysis</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 2: Strategy -->
+                <div class="journey-step reveal" data-step="2" style="animation-delay: 0.2s;">
+                    <div class="flex flex-col items-center">
+                        <div class="w-20 h-20 rounded-full bg-primary-red text-white flex items-center justify-center mb-6 shadow-lg cursor-pointer hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-chess-knight text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3 text-center">Strategy</h3>
+                        <div class="journey-content bg-white p-6 rounded-lg shadow-md w-full">
+                            <p class="text-gray-600 mb-4">We develop custom solutions tailored to your specific challenges, crafting a roadmap designed for tangible outcomes.</p>
+                            <ul class="text-gray-600 space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-gold mt-1 mr-2"></i>
+                                    <span>Custom action planning</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-gold mt-1 mr-2"></i>
+                                    <span>Resource allocation guidance</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-gold mt-1 mr-2"></i>
+                                    <span>Goal setting and KPI development</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 3: Implementation -->
+                <div class="journey-step reveal" data-step="3" style="animation-delay: 0.4s;">
+                    <div class="flex flex-col items-center">
+                        <div class="w-20 h-20 rounded-full bg-primary-red text-white flex items-center justify-center mb-6 shadow-lg cursor-pointer hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-cogs text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3 text-center">Implementation</h3>
+                        <div class="journey-content bg-white p-6 rounded-lg shadow-md w-full">
+                            <p class="text-gray-600 mb-4">We work alongside your team to execute strategic initiatives with minimal disruption and maximum impact on operations.</p>
+                            <ul class="text-gray-600 space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-gold mt-1 mr-2"></i>
+                                    <span>Change management support</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-gold mt-1 mr-2"></i>
+                                    <span>Process redesign implementation</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-gold mt-1 mr-2"></i>
+                                    <span>Team training and knowledge </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 4: Optimization -->
+                <div class="journey-step reveal" data-step="4" style="animation-delay: 0.6s;">
+                    <div class="flex flex-col items-center">
+                        <div class="w-20 h-20 rounded-full bg-primary-red text-white flex items-center justify-center mb-6 shadow-lg cursor-pointer hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-chart-line text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3 text-center">Optimization</h3>
+                        <div class="journey-content bg-white p-6 rounded-lg shadow-md w-full">
+                            <p class="text-gray-600 mb-4">We continuously monitor, measure, and refine our approach to ensure sustained growth and long-term success.</p>
+                            <ul class="text-gray-600 space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-gold mt-1 mr-2"></i>
+                                    <span>Performance measurement</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-gold mt-1 mr-2"></i>
+                                    <span>Continuous improvement </span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-gold mt-1 mr-2"></i>
+                                    <span>Long-term strategic partnership</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CTA Button
+        <div class="flex justify-center mt-16 reveal">
+            <a href="#consultation" class="bg-primary-red text-white font-semibold py-3 px-8 rounded-md hover:bg-primary-gold transition duration-300 flex items-center">
+                Schedule Your Consultation <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div> -->
+    </div>
+    
+    <script>
+        // Simple interactivity for the journey steps
+        document.addEventListener('DOMContentLoaded', function() {
+            const journeySteps = document.querySelectorAll('.journey-step');
+            
+            journeySteps.forEach(step => {
+                const icon = step.querySelector('.rounded-full');
+                const content = step.querySelector('.journey-content');
+                
+                icon.addEventListener('mouseenter', () => {
+                    content.classList.add('shadow-xl');
+                    icon.classList.add('scale-110');
+                });
+                
+                icon.addEventListener('mouseleave', () => {
+                    content.classList.remove('shadow-xl');
+                    icon.classList.remove('scale-110');
+                });
+            });
+        });
+    </script>
+
+</section>
+
+    <!-- Industries Section -->
+    <section id="industries" class="industries-section bg-white">
+        <!-- Split Content Container -->
+        <div class="flex flex-col md:flex-row shadow-xl h-screen">
+        <!-- Left Side: Industry Information -->
+        <div class="w-full md:w-1/2 bg-white overflow-y-auto align-middle  flex items-center justify-center ml-12">
+            <!-- Management Systems Maintenance -->
+            <div class="industry-content p-8 transition-all duration-500 opacity-100 relative" data-industry="mining">
+                <span class="industry-label text-sm uppercase tracking-wider text-red-500 mb-2">Our Services</span>
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Management Systems Maintenance</h3>
+                <div class="divider w-16 h-1 bg-yellow-500 mb-6"></div>
+                <p class="text-gray-600 mb-4">
+                    We provide ongoing maintenance and support for ISO management systems, ensuring they remain aligned with current standards, evolving regulations, and company growth. Our maintenance solutions are designed to protect your investment and promote continual improvement.
+                </p>
+                <p class="text-gray-600 mb-4">
+                    From reviewing documentation to preparing for surveillance audits, we offer consistent, proactive support to keep your management systems running efficiently, avoiding compliance gaps and audit surprises.
+                </p>
+                <ul class="space-y-2 text-gray-600 mt-8">
+                    <li class="flex items-start"><i class="fas fa-check-circle text-yellow-500 mt-1 mr-2"></i><span>Routine reviews, updates, and revisions</span></li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-yellow-500 mt-1 mr-2"></i><span>Surveillance and follow-up audit readiness</span></li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-yellow-500 mt-1 mr-2"></i><span>Risk-based performance evaluations</span></li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-yellow-500 mt-1 mr-2"></i><span>Corrective and preventive action tracking</span></li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-yellow-500 mt-1 mr-2"></i><span>Ongoing training and awareness refreshers</span></li>
+                </ul>
+                <a href="Services.html" class="cta-button inline-block px-6 py-3 bg-yellow-500 text-white rounded-md font-medium mt-8 transition duration-300 hover:bg-yellow-600 w-fit">Learn More</a>
+            </div>
+
+            <!-- Gap Analysis Audit -->
+            <div class="industry-content p-8 transition-all duration-500 opacity-0 absolute top-0 left-0 right-0 pointer-events-none" data-industry="public">
+                <span class="industry-label text-sm uppercase tracking-wider text-red-500 mb-2">Our Services</span>
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Gap Analysis Audit</h3>
+                <div class="divider w-16 h-1 bg-yellow-500 mb-6"></div>
+                <p class="text-gray-600 mb-4">
+                    Our Gap Analysis Audit services help organizations evaluate their current state against ISO standard requirements. We identify non-conformances, risks, and missed opportunities, preparing your business for successful certification.
+                </p>
+                <p class="text-gray-600 mb-4">
+                    This service is essential whether you're preparing for initial certification, re-certification, or improving an existing system.
+                </p>
+                <ul class="space-y-2 text-gray-600 mt-8">
+                    <li class="flex items-start"><i class="fas fa-check-circle text-yellow-500 mt-1 mr-2"></i><span>Full system review against ISO standards</span></li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-yellow-500 mt-1 mr-2"></i><span>Detailed compliance checklist reports</span></li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-yellow-500 mt-1 mr-2"></i><span>Custom corrective action planning</span></li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-yellow-500 mt-1 mr-2"></i><span>Management review preparation</span></li>
+                </ul>
+                <a href="Services.html" class="cta-button inline-block px-6 py-3 bg-yellow-500 text-white rounded-md font-medium mt-8 transition duration-300 hover:bg-yellow-600 w-fit">Learn More</a>
+            </div>
+
+            <!-- Management Systems Audit -->
+            <div class="industry-content p-8 transition-all duration-500 opacity-0 absolute top-0 left-0 right-0 pointer-events-none" data-industry="tech">
+                <span class="industry-label text-sm uppercase tracking-wider text-red-500 mb-2">Our Services</span>
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Management Systems Audit</h3>
+                <div class="divider w-16 h-1 bg-yellow-500 mb-6"></div>
+                <p class="text-gray-600 mb-4">
+                    Our independent auditing services verify whether your ISO management systems are operating effectively and meeting standard requirements. With our expertise, we provide in-depth evaluations, clear audit findings, and actionable recommendations.
+                </p>
+                <p class="text-gray-600 mb-4">
+                    Whether it's a routine internal audit or a third-party mock audit, we help you uncover blind spots and strengthen your compliance.
+                </p>
+                <ul class="space-y-2 text-gray-600 mt-8">
+                    <li class="flex items-start"><i class="fas fa-check-circle text-yellow-500 mt-1 mr-2"></i><span>Internal audits across multiple ISO standards</span></li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-yellow-500 mt-1 mr-2"></i><span>Mock audits for certification readiness</span></li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-yellow-500 mt-1 mr-2"></i><span>Objective, third-party audit reports</span></li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-yellow-500 mt-1 mr-2"></i><span>Corrective actions verification and validation</span></li>
+                </ul>
+                <a href="Services.html" class="cta-button inline-block px-6 py-3 bg-yellow-500 text-white rounded-md font-medium mt-8 transition duration-300 hover:bg-yellow-600 w-fit">Learn More</a>
+            </div>
+
+            <!-- Additional services content -->
+            <div class="industry-content p-8 transition-all duration-500 opacity-0 absolute top-0 left-0 right-0 pointer-events-none" data-industry="healthcare">
+                <span class="industry-label text-sm uppercase tracking-wider text-red-500 mb-2">Our Services</span>
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Training Workshops</h3>
+                <div class="divider w-16 h-1 bg-yellow-500 mb-6"></div>
+                <p class="text-gray-600 mb-4">
+                    Our hands-on workshops foster a deeper understanding of ISO standards and practical skills to apply them in day-to-day operations. Whether you're a small team or a large enterprise, we tailor our workshops to meet your learning goals and timelines.
+                </p>
+                <p class="text-gray-600 mb-4">
+                    Workshops are interactive, engaging, and filled with real-world case studies and role-based exercises to ensure practical learning.
+                </p>
+                <ul class="space-y-2 text-gray-600 mt-8">
+                    <li class="flex items-start"><i class="fas fa-check-circle text-yellow-500 mt-1 mr-2"></i><span>On-site, online, or hybrid formats available</span></li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-yellow-500 mt-1 mr-2"></i><span>Team building through collaborative learning</span></li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-yellow-500 mt-1 mr-2"></i><span>Hands-on activities and implementation plans</span></li>
+                </ul>
+                <a href="Services.html" class="cta-button inline-block px-6 py-3 bg-yellow-500 text-white rounded-md font-medium mt-8 transition duration-300 hover:bg-yellow-600 w-fit">Learn More</a>
+            </div>
+        </div>
+
+        <!-- Right Side: Image with Overlay -->
+        <div class="industries-image w-full md:w-1/2 relative h-full">
+            <!-- Mining Image -->
+            <div class="industry-image absolute inset-0 transition-opacity duration-500 opacity-100" data-industry="mining">
+                <img src="images/Professionals.jpg" alt="Mining Industry" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black opacity-40"></div>
+            </div>
+            
+            <!-- Public Sector Image -->
+            <div class="industry-image absolute inset-0 transition-opacity duration-500 opacity-0" data-industry="public">
+                <img src="images/Audit.jpg" alt="Public Sector" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black opacity-40"></div>
+            </div>
+            
+            <!-- Technology Image -->
+            <div class="industry-image absolute inset-0 transition-opacity duration-500 opacity-0" data-industry="tech">
+                <img src="images/EmployeesClass.jpg" alt="Technology Industry" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black opacity-40"></div>
+            </div>
+            
+            <!-- Healthcare Image -->
+            <div class="industry-image absolute inset-0 transition-opacity duration-500 opacity-0" data-industry="healthcare">
+                <img src="images/StickyNotes.jpg" alt="Healthcare Industry" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black opacity-40"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const industries = ["mining", "public", "tech", "healthcare"];
+            let currentIndex = 0;
+            
+            // Function to switch active industry
+            function switchIndustry(industryId) {
+                // Get all images and content sections
+                const images = document.querySelectorAll('.industry-image');
+                const contents = document.querySelectorAll('.industry-content');
+                
+                // Handle images
+                images.forEach(img => {
+                    if (img.dataset.industry === industryId) {
+                        img.classList.remove('opacity-0');
+                        img.classList.add('opacity-100');
+                    } else {
+                        img.classList.remove('opacity-100');
+                        img.classList.add('opacity-0');
+                    }
+                });
+                
+                // Handle content sections
+                contents.forEach(content => {
+                    if (content.dataset.industry === industryId) {
+                        content.classList.remove('opacity-0', 'pointer-events-none');
+                        content.classList.add('opacity-100');
+                        content.style.position = 'relative';
+                    } else {
+                        content.classList.add('opacity-0', 'pointer-events-none');
+                        content.classList.remove('opacity-100');
+                        content.style.position = 'absolute';
+                    }
+                });
+            }
+            
+            // Auto-rotate industries
+            function rotateIndustries() {
+                currentIndex = (currentIndex + 1) % industries.length;
+                switchIndustry(industries[currentIndex]);
+            }
+            
+            // Start the rotation - every 6 seconds
+            setInterval(rotateIndustries, 6000);
+        });
+    </script>
+</section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-primary-red text-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="stats-item reveal">
+                    <div class="text-4xl font-bold text-white mb-2">
+                        <span class="counter-value" data-count="250">250</span>+
+                    </div>
+                    <p class="text-sm uppercase tracking-wider text-gray-200">Clients Served</p>
+                </div>
+                <div class="stats-item reveal">
+                    <div class="text-4xl font-bold text-white mb-2">
+                        <span class="counter-value" data-count="15">15</span>+
+                    </div>
+                    <p class="text-sm uppercase tracking-wider text-gray-200">Years Experience</p>
+                </div>
+                <div class="stats-item reveal">
+                    <div class="text-4xl font-bold text-white mb-2">
+                        <span class="counter-value" data-count="95">95</span>%
+                    </div>
+                    <p class="text-sm uppercase tracking-wider text-gray-200">Client Retention</p>
+                </div>
+                <div class="stats-item reveal">
+                    <div class="text-4xl font-bold text-white mb-2">
+                        <span class="counter-value" data-count="50">50</span>+
+                    </div>
+                    <p class="text-sm uppercase tracking-wider text-gray-200">Expert Consultants</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Careers Section -->
+<section class="careers-section">
+    <div class="careers-container">
+        <!-- Image Side -->
+        <div class="careers-image">
+            <img src="images/Careers.jpg" alt="Professional consultants in meeting" />
+        </div>
+        
+        <!-- Content Side -->
+        <div class="careers-content">
+    <span class="careers-label">Join Our Team</span>
+    <h2 class="careers-heading">Careers at AA Business Consultants</h2>
+    <div class="divider"></div>
+    
+    <p class="careers-description">
+        At AA Business Consultants, we’re committed to excellence in public sector policy development, strategic planning, and ISO management systems. Based in South Africa, we offer a dynamic and impactful work environment where professionals grow while making a real difference in organizational effectiveness, governance, and compliance.
+    </p>
+    
+    <p class="careers-description">
+        Our consultants collaborate with leading government departments, state-owned entities, municipalities, and private sector clients. You'll have the opportunity to work on exciting projects, deliver high-impact solutions, and contribute to capacity building through our consulting services and training workshops.
+    </p>
+    
+    
+
+    <p class="careers-description">
+        Our services include ISO Management Systems development and implementation, maintenance, auditing, gap analysis, and comprehensive training workshops. We also host industry-relevant events, and applicants can register for upcoming training programs directly through our platform.
+    </p>
+
+    
+    
+    <a href="https://www.wwise.co.za" class="cta-button">Explore Careers</a>
+</div>
+
+    </div>
+</section>
+
+<style>
+    .careers-section {
+        width: 100%;
+        height: 100vh;
+        background-color: #fff;
+    }
+    
+    .careers-container {
+        display: flex;
+        height: 100%;
+    }
+    
+    /* Image Side */
+    .careers-image {
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+    }
+    
+    .careers-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    /* Content Side */
+    .careers-content {
+        width: 50%;
+        padding: 6rem 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .careers-label {
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #C41E3A;
+        margin-bottom: 1rem;
+    }
+    
+    .careers-heading {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+    }
+    
+    .divider {
+        width: 80px;
+        height: 4px;
+        background-color: #DAA520;
+        margin-bottom: 2rem;
+    }
+    
+    .careers-description {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #555;
+        margin-bottom: 2.5rem;
+    }
+    
+    .careers-benefits {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+    
+    .benefit-item {
+        display: flex;
+        align-items: center;
+    }
+    
+    .benefit-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #DAA520;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1rem;
+    }
+    
+    .benefit-icon i {
+        color: white;
+        font-size: 1.25rem;
+    }
+    
+    .benefit-item h4 {
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #333;
+    }
+    
+    .cta-button {
+        display: inline-block;
+        background-color: #C41E3A;
+        color: white;
+        font-weight: 600;
+        padding: 1rem 2rem;
+        border-radius: 0.25rem;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: background-color 0.3s ease;
+        text-align: center;
+        max-width: 250px;
+    }
+    
+    .cta-button:hover {
+        background-color: #a01830;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+        .careers-container {
+            flex-direction: column;
+        }
+        
+        .careers-image, .careers-content {
+            width: 100%;
+        }
+        
+        .careers-image {
+            height: 40vh;
+        }
+        
+        .careers-content {
+            padding: 3rem 2rem;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .careers-benefits {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+    }
+</style>
+
+    <!-- Insights Section -->
+    <section id="insights" class="py-20 bg-grey-100">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col items-center mb-12 reveal">
+                <span class="inline-block text-primary-red uppercase tracking-wider mb-2 font-semibold text-sm">Latest Thinking</span>
+                <h2 class="text-3xl md:text-4xl font-bold font-heading text-center text-primary-black mb-4">Business Insights</h2>
+                <div class="w-20 h-1 bg-primary-gold"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-xl reveal">
+                    <img src="images/blog1.jpg" alt="Blog Image" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="text-sm text-gray-500"><i class="far fa-calendar-alt mr-2"></i> April 15, 2025</span>
+                            <span class="text-sm text-gray-500 ml-4"><i class="far fa-folder mr-2"></i> Strategy</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">The Future of Financial Strategy in a Post-Pandemic Economy</h3>
+                        <p class="text-gray-600 mb-4">Exploring how businesses need to adapt their financial strategies to thrive in the evolving economic landscape shaped by global events.</p>
+                        <a href="#blog-post" class="text-primary-red font-semibold hover:text-primary-gold transition duration-300 flex items-center">
+                            Read Article <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Blog Post 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-xl reveal" style="animation-delay: 0.2s;">
+                    <img src="images/blog2.jpg" alt="Blog Image" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="text-sm text-gray-500"><i class="far fa-calendar-alt mr-2"></i> April 8, 2025</span>
+                            <span class="text-sm text-gray-500 ml-4"><i class="far fa-folder mr-2"></i> Compliance</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Navigating the Evolving Landscape of Corporate Risk Management</h3>
+                        <p class="text-gray-600 mb-4">Examining the emerging risk factors and compliance challenges that modern businesses face in a rapidly changing regulatory environment.</p>
+                        <a href="#blog-post" class="text-primary-red font-semibold hover:text-primary-gold transition duration-300 flex items-center">
+                            Read Article <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Blog Post 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-xl reveal" style="animation-delay: 0.4s;">
+                    <img src="images/block3.jpg" alt="Blog Image" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="text-sm text-gray-500"><i class="far fa-calendar-alt mr-2"></i> March 30, 2025</span>
+                            <span class="text-sm text-gray-500 ml-4"><i class="far fa-folder mr-2"></i> Leadership</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Building Resilient Leadership Teams for Business Transformation</h3>
+                        <p class="text-gray-600 mb-4">How organizations can develop strong leadership capabilities to drive successful transformation initiatives in times of disruption.</p>
+                        <a href="#blog-post" class="text-primary-red font-semibold hover:text-primary-gold transition duration-300 flex items-center">
+                            Read Article <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-center mt-12 reveal">
+                <a href="BusinessInsights.html" class="bg-transparent border-2 border-primary-red text-primary-red font-semibold py-3 px-8 rounded-md hover:bg-primary-red hover:text-white transition duration-300">
+                    View All Insights
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Free Consultation Section -->
+    <section id="consultation" class="py-20 bg-gray-900 bg-cover bg-center relative">
+    <!-- Google Map Iframe as background -->
+    <div class="absolute inset-0 z-0">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3673.1092439243057!2d30.454414175312568!3d-22.983009979201494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec5c6684f719fc3%3A0x3ce02411284b6743!2s103%20Mphephu%20Dr.%2C%20Thohoyandou-P%2C%20Thohoyandou%2C%200950!5e0!3m2!1sen!2sza!4v1745412141528!5m2!1sen!2sza" 
+            width="100%" 
+            height="90%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            class="w-full h-full">
+        </iframe>
+    </div>
+
+    <!-- Dark overlay -->
+    <div class="absolute inset-0 bg-black opacity-70 z-10"></div>
+
+    <!-- Content -->
+    <div class="container mx-auto px-6 relative z-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="reveal">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 font-heading">Book Your Free Strategic Consultation</h2>
+    <p class="text-white mb-8">Take the first step towards transforming your business. Our consultants will provide personalized insights to address your unique challenges and opportunities.</p>
+    <ul class="space-y-4 mb-8">
+        <li class="flex items-start">
+            <i class="fas fa-check-circle text-primary-gold mt-1 mr-3"></i>
+            <span class="text-gray-300">Comprehensive business assessment</span>
+        </li>
+        <li class="flex items-start">
+            <i class="fas fa-check-circle text-primary-gold mt-1 mr-3"></i>
+            <span class="text-white">Tailored recommendations for your industry</span>
+        </li>
+        <li class="flex items-start">
+            <i class="fas fa-check-circle text-primary-gold mt-1 mr-3"></i>
+            <span class="text-white">Strategic roadmap for implementation</span>
+        </li>
+        <li class="flex items-start">
+            <i class="fas fa-check-circle text-primary-gold mt-1 mr-3"></i>
+            <span class="text-white">No obligation discussion with senior consultants</span>
+        </li>
+    </ul>
+
+    <div class="space-y-4 text-white text-sm">
+        <p><strong>Email: </strong> contact@yourbusiness.com</p>
+        <p><strong>Phone: </strong> +27 12 345 6789</p>
+        <p><strong>Location: </strong> 103 Mphephu Dr,Thohoyandou, 0950</p>
+        <p><strong>Owners: </strong> Jane Doe & John Smith</p>
+    </div>
+</div>
+
+
+            <div class="bg-white rounded-lg shadow-xl p-8 reveal">
+                <h3 class="text-2xl font-semibold text-primary-black mb-6 font-heading text-center">Get Started Today</h3>
+                <form>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="first-name" class="block text-gray-700 text-sm font-medium mb-2">First Name</label>
+                            <input type="text" id="first-name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-red">
+                        </div>
+                        <div>
+                            <label for="last-name" class="block text-gray-700 text-sm font-medium mb-2">Last Name</label>
+                            <input type="text" id="last-name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-red">
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label for="company" class="block text-gray-700 text-sm font-medium mb-2">Company Name</label>
+                        <input type="text" id="company" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-red">
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block text-gray-700 text-sm font-medium mb-2">Email Address</label>
+                        <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-red">
+                    </div>
+                    <div class="mb-6">
+                        <label for="service" class="block text-gray-700 text-sm font-medium mb-2">Service of Interest</label>
+                        <select id="service" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-red">
+                            <option value="">Select a Service</option>
+                            <option value="financial">Financial Advisory</option>
+                            <option value="risk">Risk & Compliance</option>
+                            <option value="training">Training & Development</option>
+                            <option value="strategic">Strategic Business Support</option>
+                        </select>
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-700 text-sm font-medium mb-2">Your Business Challenges</label>
+                        <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-red"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-primary-red text-white font-semibold py-3 px-6 rounded-md hover:bg-opacity-90 transition duration-300 btn-primary">Schedule Consultation</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Contact Section -->
+    <!-- <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col items-center mb-12 reveal">
+                <span class="inline-block text-primary-red uppercase tracking-wider mb-2 font-semibold text-sm">Get In Touch</span>
+                <h2 class="text-3xl md:text-4xl font-bold font-heading text-center text-primary-black mb-4">Contact Us</h2>
+                <div class="w-20 h-1 bg-primary-gold"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-md p-8 text-center transition duration-300 hover:shadow-xl reveal">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-50 text-primary-red text-2xl mb-6">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Our Office</h3>
+                    <p class="text-gray-600">
+                        1234 Business Avenue<br>
+                        Suite 500<br>
+                        New York, NY 10001
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-8 text-center transition duration-300 hover:shadow-xl reveal" style="animation-delay: 0.2s;">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-50 text-primary-red text-2xl mb-6">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Call Us</h3>
+                    <p class="text-gray-600">
+                        Main: (555) 123-4567<br>
+                        Support: (555) 987-6543<br>
+                        Fax: (555) 246-8101
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-8 text-center transition duration-300 hover:shadow-xl reveal" style="animation-delay: 0.4s;">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-50 text-primary-red text-2xl mb-6">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Email Us</h3>
+                    <p class="text-gray-600">
+                        General: info@aaconsultants.com<br>
+                        Support: support@aaconsultants.com<br>
+                        Careers: careers@aaconsultants.com
+                    </p>
+                </div>
+            </div>
+
+     
+            <div class="mt-16 rounded-lg overflow-hidden shadow-md h-96 reveal">
+                <div class="bg-gray-200 w-full h-full flex items-center justify-center">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3673.1092439243057!2d30.454414175312568!3d-22.983009979201494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec5c6684f719fc3%3A0x3ce02411284b6743!2s103%20Mphephu%20Dr.%2C%20Thohoyandou-P%2C%20Thohoyandou%2C%200950!5e0!3m2!1sen!2sza!4v1745412141528!5m2!1sen!2sza" width="1500" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!--  -->
+
+    <!-- Footer -->
+    <footer class="bg-primary-black text-white pt-16 pb-8">
+    <div class="container mx-auto px-6">
+        <div class="flex flex-wrap justify-between">
+            <!-- Company Info -->
+            <div class="w-full md:w-1/2 lg:w-1/3 mb-10 md:mb-0">
+                <h3 class="text-2xl font-bold mb-6 font-heading">AA Business Consultants</h3>
+                <p class="mb-6 text-gray-400 max-w-xs">South Africa's leading consulting firm specializing in public sector policy development, strategic planning, and ISO management systems.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-primary-red transition-colors duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-primary-red transition-colors duration-300">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-primary-red transition-colors duration-300">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="w-full md:w-1/2 lg:w-1/3 mb-10 md:mb-0">
+                <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+                <ul class="space-y-3">
+                    <li><a href="index.html" class="text-gray-400 hover:text-primary-red transition-colors duration-300">Home</a></li>
+                    <li><a href="#about" class="text-gray-400 hover:text-primary-red transition-colors duration-300">About Us</a></li>
+                    <li><a href="#services" class="text-gray-400 hover:text-primary-red transition-colors duration-300">Services</a></li>
+                    <li><a href="#industries" class="text-gray-400 hover:text-primary-red transition-colors duration-300">Industries</a></li>
+                    <li><a href="#insights" class="text-gray-400 hover:text-primary-red transition-colors duration-300">Insights</a></li>
+                    <li><a href="careers.html" class="text-gray-400 hover:text-primary-red transition-colors duration-300">Careers</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="w-full md:w-full lg:w-1/3">
+                <h4 class="text-lg font-bold mb-6">Contact Us</h4>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <i class="fas fa-map-marker-alt mt-1 mr-3 text-primary-red"></i>
+                        <span class="text-gray-400">123 Business Park, Sandton<br>Johannesburg, 2196<br>South Africa</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-phone-alt mr-3 text-primary-red"></i>
+                        <span class="text-gray-400">+27 11 123 4567</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-envelope mr-3 text-primary-red"></i>
+                        <span class="text-gray-400">info@aabusinessconsultants.co.za</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="border-gray-800 my-10">
+
+        <!-- Copyright -->
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-500 mb-4 md:mb-0">&copy; 2025 AA Business Consultants. All rights reserved.</p>
+            <div class="flex space-x-6">
+                <a href="privacy-policy.html" class="text-gray-500 hover:text-primary-red transition-colors duration-300">Privacy Policy</a>
+                <a href="terms-of-service.html" class="text-gray-500 hover:text-primary-red transition-colors duration-300">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-primary-red text-white flex items-center justify-center shadow-lg z-50 transition duration-300 transform scale-0 hover:bg-opacity-90">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger-menu');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            hamburger.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Mobile Submenu Toggles
+            const mobileSubmenus = document.querySelectorAll('#mobile-menu .relative > button');
+            mobileSubmenus.forEach(submenu => {
+                submenu.addEventListener('click', function() {
+                    const submenuContent = this.nextElementSibling;
+                    submenuContent.classList.toggle('hidden');
+                });
+            });
+
+            // Back to Top Button
+            const backToTopButton = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.remove('scale-0');
+                    backToTopButton.classList.add('scale-100');
+                } else {
+                    backToTopButton.classList.remove('scale-100');
+                    backToTopButton.classList.add('scale-0');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // // About Section Rotation
+            // const aboutTitles = ['Our Vision', 'Our Mission', 'Our Approach', 'Our Team'];
+            // const aboutTexts = [
+            //     'To be the preeminent catalyst for business evolution, empowering organizations to realize their utmost potential through astute strategic guidance and collaborative alliances.',
+            //     'To deliver exceptional value through innovative, tailored solutions that address complex business challenges and drive sustainable growth for our clients.',
+            //     'We combine deep industry expertise with cutting-edge methodologies to deliver practical, actionable solutions that create measurable impact.',
+            //     'Our consultants bring diverse perspectives and extensive experience across industries, united by a shared commitment to excellence and client success.'
+            // ];
+            // const aboutImages = [
+            //     'images/background.jpg',
+            //     'images/industry5.jpg',
+            //     'images/image3.jpg',
+            //     'images/backgrond.jpg'
+            // ];
+            
+            let currentAboutIndex = 0;
+            const aboutTitle = document.getElementById('about-title');
+            const aboutText = document.getElementById('about-text');
+            const aboutImage = document.getElementById('about-image');
+            
+            setInterval(function() {
+                currentAboutIndex = (currentAboutIndex + 1) % aboutTitles.length;
+                
+                aboutTitle.style.opacity = 0;
+                aboutText.style.opacity = 0;
+                aboutImage.style.opacity = 0;
+                
+                setTimeout(function() {
+                    aboutTitle.textContent = aboutTitles[currentAboutIndex];
+                    aboutText.textContent = aboutTexts[currentAboutIndex];
+                    aboutImage.src = aboutImages[currentAboutIndex];
+                    
+                    aboutTitle.style.opacity = 1;
+                    aboutText.style.opacity = 1;
+                    aboutImage.style.opacity = 1;
+                }, 500);
+            }, 50000);
+
+            // Testimonial Slider
+            // const testimonialContainer = document.querySelector('.testimonial-container');
+            // const testimonials = document.querySelectorAll('.testimonial');
+            // const radioButtons = document.querySelectorAll('.custom-radio span');
+            
+            // let currentTestimonial = 0;
+            
+            // function showTestimonial(index) {
+            //     testimonialContainer.style.transform = `translateX(-${index * 100}%)`;
+                
+            //     // Update radio buttons
+            //     radioButtons.forEach(button => button.classList.remove('active'));
+            //     radioButtons[index].classList.add('active');
+                
+            //     currentTestimonial = index;
+            // }
+            
+            // // Add click event to radio buttons
+            // radioButtons.forEach((button, index) => {
+            //     button.addEventListener('click', () => {
+            //         showTestimonial(index);
+            //     });
+            // });
+            
+            // // Auto-rotate testimonials
+            // setInterval(function() {
+            //     currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            //     showTestimonial(currentTestimonial);
+            // }, 6000);
+
+            // Animate Stats Counter
+            const counters = document.querySelectorAll('.counter-value');
+            const speed = 200;
+            
+            function animateCounters() {
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-count');
+                    const count = +counter.innerText;
+                    
+                    const increment = target / speed;
+                    
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + increment);
+                        setTimeout(animateCounters, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                });
+            }
+            
+            // Reveal animations on scroll
+            const reveals = document.querySelectorAll('.reveal');
+            
+            function revealElements() {
+                reveals.forEach(reveal => {
+                    const windowHeight = window.innerHeight;
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add('active');
+                        
+                        // Animate counters when stats section is in view
+                        if (reveal.querySelector('.counter-value')) {
+                            animateCounters();
+                        }
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', revealElements);
+            
+            // Call once on page load
+            revealElements();
+        });
+    </script>
+</body>
+</html>

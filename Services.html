@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - AA Business Consultants</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #D81F38;
+            --primary-black: #1A1A1A;
+            --primary-gray: #F5F5F5;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .font-heading {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .text-primary-red {
+            color: var(--primary-red);
+        }
+        
+        .text-primary-black {
+            color: var(--primary-black);
+        }
+        
+        .bg-primary-red {
+            background-color: var(--primary-red);
+        }
+        
+        .bg-primary-black {
+            background-color: var(--primary-black);
+        }
+        
+        .animated-underline {
+            position: relative;
+        }
+        
+        .animated-underline::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--primary-red);
+            transition: width 0.3s ease;
+        }
+        
+        .animated-underline:hover::after {
+            width: 100%;
+        }
+        
+        .hero-banner {
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+        }
+        
+        /* .section-heading::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-red);
+            margin: 20px 0;
+        } */
+        
+        .service-card {
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-bottom: 3px solid var(--primary-red);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .service-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            color: var(--primary-red);
+            transform: scale(1.1);
+        }
+        
+        .tab-button {
+            transition: all 0.3s ease;
+        }
+        
+        .tab-button.active {
+            color: white;
+            background-color: var(--primary-red);
+            border-color: var(--primary-red);
+        }
+        
+        .tab-content {
+            display: none;
+            transition: all 0.3s ease;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .feature-card:hover .feature-icon {
+            color: var(--primary-red);
+            transform: scale(1.1);
+        }
+        
+        .process-step {
+            position: relative;
+        }
+        
+        .process-step::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -15%;
+            width: 30%;
+            height: 2px;
+            background-color: var(--primary-red);
+            transform: translateY(-50%);
+        }
+        
+        .process-step:last-child::after {
+            display: none;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-red);
+            color: white;
+            font-weight: 600;
+            padding: 12px 28px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: #c01830;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(216, 31, 56, 0.3);
+        }
+
+        .testimonial-slider {
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .testimonial-slide {
+            transition: transform 0.5s ease;
+        }
+        
+        .faq-item {
+            transition: all 0.3s ease;
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full p-8 z-50 transition-all duration-300 bg-white shadow-md" id="main-nav">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+  
+            <!-- Logo on the Left -->
+            <a href="#" class="flex items-center flex-shrink-0">
+                <span class="text-2xl font-bold text-primary-red font-heading transition-colors duration-300" id="logo-first">AA</span>
+                <span class="text-2xl font-bold text-primary-black font-heading ml-1 transition-colors duration-300" id="logo-second">Business Consultants</span>
+            </a>
+
+            <!-- Nav Links on the Right -->
+            <div class="hidden md:flex justify-end space-x-6 items-center">
+                <a href="index.html" class="text-gray-700 hover:text-primary-red transition duration-300 animated-underline nav-link">Home</a>
+                <a href="#service-overview" class="text-gray-700 hover:text-primary-red transition duration-300 animated-underline nav-link">Overview</a>
+                <a href="#service-categories" class="text-gray-700 hover:text-primary-red transition duration-300 animated-underline nav-link">Categories</a>
+                <a href="#iso-management" class="text-gray-700 hover:text-primary-red transition duration-300 animated-underline nav-link">ISO Management</a>
+                <a href="#strategic-planning" class="text-gray-700 hover:text-primary-red transition duration-300 animated-underline nav-link">Strategic Planning</a>
+                <a href="#policy-development" class="text-gray-700 hover:text-primary-red transition duration-300 animated-underline nav-link">Policy Development</a>
+                <a href="#training" class="text-gray-700 hover:text-primary-red transition duration-300 animated-underline nav-link">Training</a>
+                <a href="#contact" class="text-gray-700 hover:text-primary-red transition duration-300 animated-underline nav-link">Contact</a>
+            </div>
+
+        </div>
+
+
+        <div class="md:hidden absolute top-full left-0 right-0 bg-white shadow-md rounded-b-md overflow-hidden hidden" id="mobile-menu">
+            <a href="index.html" class="text-grey-700 hover:text-primary-gold transition duration-300 animated-underline nav-link">Home</a>
+            <a href="#service-overview" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary-red transition duration-300 border-b border-gray-100">Overview</a>
+            <a href="#service-categories" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary-red transition duration-300 border-b border-gray-100">Categories</a>
+            <a href="#iso-management" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary-red transition duration-300 border-b border-gray-100">ISO Management</a>
+            <a href="#strategic-planning" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary-red transition duration-300 border-b border-gray-100">Strategic Planning</a>
+            <a href="#policy-development" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary-red transition duration-300 border-b border-gray-100">Policy Development</a>
+            <a href="#training" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary-red transition duration-300 border-b border-gray-100">Training</a>
+            <a href="#contact" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary-red transition duration-300 border-b border-gray-100">Contact</a>
+            <a href="#consultation" class="block px-4 py-3 bg-primary-red text-white font-semibold hover:bg-opacity-90 transition duration-300">Book a Consultation</a>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner h-[80vh] flex items-center justify-center text-white mt-16 " style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/Professionals.jpg'); background-size: cover; background-position: center;">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-4 text-primary-red mb-8">Our Services</h1>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8">Comprehensive consulting solutions tailored to enhance your organization's performance, compliance, and strategic direction.</p>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section id="service-overview" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <span class="text-primary-red font-semibold  uppercase tracking-wider">What We Offer</span>
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold mt-2 mb-6 section-heading">Specialized Consulting Services</h2>
+                    <p class="text-gray-700 mb-6">At AA Business Consultants, we deliver comprehensive solutions designed to transform your organization. Our expertise spans ISO management systems, strategic planning, policy development, and capacity building programs.</p>
+                    <p class="text-gray-700 mb-6">Whether you're seeking to enhance operational efficiency, ensure regulatory compliance, or develop a strategic roadmap for growth, our team of experienced consultants will work closely with you to understand your unique challenges and develop tailored solutions that deliver measurable results.</p>
+                    <p class="text-gray-700">Our practical, results-driven approach has helped numerous organizations across South Africa achieve their goals and build sustainable success.</p>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="images/Business Consultants.jpg" alt="AA Business Consultants services" class="rounded-lg shadow-xl w-full h-auto object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Categories -->
+    <section id="service-categories" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary-red font-semibold uppercase tracking-wider">Our Services</span>
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mt-2 mb-6 section-heading">Comprehensive Solutions</h2>
+                <p class="text-gray-700">Discover our range of specialized consulting services designed to address your organization's most pressing challenges.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="images/Audit.jpg" alt="ISO Management Systems" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                            <i class="fas fa-certificate service-icon text-5xl text-white"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">ISO Management Systems</h3>
+                        <p class="text-gray-700 mb-4">Development, implementation, maintenance, and auditing of ISO standards across multiple management systems.</p>
+                        <a href="#iso-management" class="text-primary-red font-semibold flex items-center hover:underline">
+                            Learn More
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="images/StickyNotes.jpg" alt="Strategic Planning" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                            <i class="fas fa-chess service-icon text-5xl text-white"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Strategic Planning</h3>
+                        <p class="text-gray-700 mb-4">Comprehensive planning services to help define vision, mission, strategic objectives, and implementation roadmaps.</p>
+                        <a href="#strategic-planning" class="text-primary-red font-semibold flex items-center hover:underline">
+                            Learn More
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="images/Team working together.jpg" alt="Policy Development" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                            <i class="fas fa-file-contract service-icon text-5xl text-white"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Policy Development</h3>
+                        <p class="text-gray-700 mb-4">Expert assistance in developing effective policies and procedures for public and private sector organizations.</p>
+                        <a href="#policy-development" class="text-primary-red font-semibold flex items-center hover:underline">
+                            Learn More
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="images/Professional consultants in meeting.jpg" alt="Training & Capacity Building" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                            <i class="fas fa-chalkboard-teacher service-icon text-5xl text-white"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Training & Capacity Building</h3>
+                        <p class="text-gray-700 mb-4">Comprehensive training workshops and knowledge transfer programs to build internal capabilities.</p>
+                        <a href="#training" class="text-primary-red font-semibold flex items-center hover:underline">
+                            Learn More
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ISO Management Systems Section -->
+    <section id="iso-management" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary-red font-semibold uppercase tracking-wider">ISO Management Systems</span>
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mt-2 mb-6 section-heading">Excellence in ISO Compliance</h2>
+                <p class="text-gray-700">From implementation to certification and ongoing maintenance, we provide comprehensive ISO management system services tailored to your specific needs.</p>
+            </div>
+            
+            <div class="flex flex-wrap -mx-4">
+                <!-- Tabs Navigation -->
+                <div class="w-full md:w-1/4 px-4 mb-8 md:mb-0">
+                    <div class="sticky top-32">
+                        <h3 class="text-lg font-bold mb-6 pb-2 border-b border-gray-200">ISO Services</h3>
+                        <div class="flex flex-col space-y-2">
+                            <button class="tab-button text-left px-4 py-3 rounded-md border border-gray-200 font-medium active" data-tab="tab1">Management Systems Maintenance</button>
+                            <button class="tab-button text-left px-4 py-3 rounded-md border border-gray-200 font-medium" data-tab="tab2">Gap Analysis Audit</button>
+                            <button class="tab-button text-left px-4 py-3 rounded-md border border-gray-200 font-medium" data-tab="tab3">Management Systems Audit</button>
+                            <button class="tab-button text-left px-4 py-3 rounded-md border border-gray-200 font-medium" data-tab="tab4">Training Workshops</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tab Content -->
+                <div class="w-full md:w-3/4 px-4">
+                    <!-- Tab 1 Content -->
+                    <div id="tab1" class="tab-content active bg-gray-50 rounded-lg p-8 shadow-md">
+                        <h3 class="text-2xl font-bold mb-4">Management Systems Maintenance</h3>
+                        <div class="w-16 h-1 bg-primary-red mb-6"></div>
+                        <p class="text-gray-700 mb-4">
+                            We provide ongoing maintenance and support for ISO management systems, ensuring they remain aligned with current standards, evolving regulations, and company growth. Our maintenance solutions are designed to protect your investment and promote continual improvement.
+                        </p>
+                        <p class="text-gray-700 mb-6">
+                            From reviewing documentation to preparing for surveillance audits, we offer consistent, proactive support to keep your management systems running efficiently, avoiding compliance gaps and audit surprises.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                            <div class="bg-white p-4 rounded-md shadow-sm flex items-start">
+                                <i class="fas fa-check-circle text-primary-red mt-1 mr-3"></i>
+                                <p>Routine reviews, updates, and revisions</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-md shadow-sm flex items-start">
+                                <i class="fas fa-check-circle text-primary-red mt-1 mr-3"></i>
+                                <p>Surveillance and follow-up audit readiness</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-md shadow-sm flex items-start">
+                                <i class="fas fa-check-circle text-primary-red mt-1 mr-3"></i>
+                                <p>Risk-based performance evaluations</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-md shadow-sm flex items-start">
+                                <i class="fas fa-check-circle text-primary-red mt-1 mr-3"></i>
+                                <p>Corrective and preventive action tracking</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-md shadow-sm flex items-start">
+                                <i class="fas fa-check-circle text-primary-red mt-1 mr-3"></i>
+                                <p>Ongoing training and awareness refreshers</p>
+                            </div>
+                        </div>
+                        
+                        <a href="#contact" class="cta-button">Request a Consultation</a>
+                    </div>
+                    
+                    <!-- Tab 2 Content -->
+                    <div id="tab2" class="tab-content bg-gray-50 rounded-lg p-8 shadow-md">
+                        <h3 class="text-2xl font-bold mb-4">Gap Analysis Audit</h3>
+                        <div class="w-16 h-1 bg-primary-red mb-6"></div>
+                        <p class="text-gray-700 mb-4">
+                            Our Gap Analysis Audit services help organizations evaluate their current state against ISO standard requirements. We identify non-conformances, risks, and missed opportunities, preparing your business for successful certification.
+                        </p>
+                        <p class="text-gray-700 mb-6">
+                            This service is essential whether you're preparing for initial certification, re-certification, or improving an existing system.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                            <div class="bg-white p-4 rounded-md shadow-sm flex items-start">
+                                <i class="fas fa-check-circle text-primary-red mt-1 mr-3"></i>
+                                <p>Full system review against ISO standards</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-md shadow-sm flex items-start">
+                                <i class="fas fa-check-circle text-primary-red mt-1 mr-3"></i>
+                                <p>Detailed compliance checklist reports</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-md shadow-sm flex items-start">
+                                <i class="fas fa-check-circle text-primary-red mt-1 mr-3"></i>
+                                <p>Custom corrective action planning</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-md shadow-sm flex items-start">
+                                <i class="fas fa-check-circle text-primary-red mt-1 mr-3"></i>
+                                <p>Management review preparation</p>
+                            </div>
+                        </div>
+                        
+                        <a href="#contact" class="cta-button">Request a Consultation</a>
+                    </div>
+                    
+                    <!-- Tab 3 Content -->
+                    <div id="tab3" class="tab-content bg-gray-50 rounded-lg p-8 shadow-md">
+                        <h3 class="text-2xl font-bold mb-4">Management Systems Audit</h3>
+                        <div class="w-16 h-1 bg-primary-red mb-6"></div>
+                        <p class="text-gray-700 mb-4">
+                            Our independent auditing services verify whether your ISO management systems are operating effectively and meeting standard requirements. With our expertise, we provide in-depth evaluations, clear audit findings, and actionable recommendations.
+                        </p>
+                        <p class="text-gray-700 mb-6">
+                            Whether it's a routine internal audit or a third-party mock audit, we help you uncover blind spots and strengthen your compliance.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                            <div class="bg-white p-4 rounded-md shadow-sm flex items-start">
+                                <i class="fas fa-check-circle text-primary-red mt-1 mr-3"></i>
+                                <p>Internal audits across multiple ISO standards</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-md shadow-sm flex items-start">
+                                <i class="fas fa-check-circle text-primary-red mt-1 mr-3"></i>
+                                <p>Mock audits for certification readiness</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-md shadow-sm flex items-start">
+                                <i class="fas fa-check-circle text-primary-red mt-1 mr-3"></i>
+                                <p>Objective, third-party audit reports</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-md shadow-sm flex items-start">
+                                <i class="fas fa-check-circle text-primary-red mt-1 mr-3"></i>
+                                <p>Corrective actions verification and validation</p>
+                            </div>
+                        </div>
+                        
+                        <a href="#contact" class="cta-button">Request a Consultation</a>
+                    </div>
+                    
+                    <!-- Tab 4 Content -->
+                    <div id="tab4" class="tab-content bg-gray-50 rounded-lg p-8 shadow-md">
+                        <h3 class="text-2xl font-bold mb-4">Training Workshops</h3>
+                        <div class="w-16 h-1 bg-primary-red mb-6"></div>
+                        <p class="text-gray-700 mb-4">
+                            Our hands-on workshops foster a deeper understanding of ISO standards and practical skills to apply them in day-to-day operations. Whether you're a small team or a large enterprise, we tailor our workshops to meet your learning goals and timelines.
+                        </p>
+                        <p class="text-gray-700 mb-6">
+                            Workshops are interactive, engaging, and filled with real-world case studies and role-based exercises to ensure practical learning.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                            <div class="bg-white p-4 rounded-md shadow-sm flex items-start">
+                                <i class="fas fa-check-circle text-primary-red mt-1 mr-3"></i>
+                                <p>On-site, online, or hybrid formats available</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-md shadow-sm flex items-start">
+                                <i class="fas fa-check-circle text-primary-red mt-1 mr-3"></i>
+                                <p>Team building through collaborative learning</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-md shadow-sm flex items-start">
+                                <i class="fas fa-check-circle text-primary-red mt-1 mr-3"></i>
+                                <p>Hands-on activities and implementation plans</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-md shadow-sm flex items-start">
+                                <i class="fas fa-check-circle text-primary-red mt-1 mr-3"></i>
+                                <p>Customized learning resources and tools</p>
+                            </div>
+                        </div>
+                        
+                        <a href="#contact" class="cta-button">Request a Consultation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const tabButtons = document.querySelectorAll(".tab-button");
+                const tabContents = document.querySelectorAll(".tab-content");
+
+                tabButtons.forEach(button => {
+                    button.addEventListener("click", () => {
+                        // Remove active class from all buttons
+                        tabButtons.forEach(btn => btn.classList.remove("active"));
+
+                        // Hide all tab contents
+                        tabContents.forEach(tab => tab.classList.remove("active"));
+
+                        // Add active class to the clicked button
+                        button.classList.add("active");
+
+                        // Show the related tab content
+                        const tabId = button.getAttribute("data-tab");
+                        document.getElementById(tabId).classList.add("active");
+                    });
+                });
+            });
+        </script>
+
+    </section>
+
+    <!-- ISO Standards Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h3 class="text-2xl font-bold mb-8 text-center">Our ISO Expertise</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center mr-4">
+                                <i class="fas fa-shield-alt text-primary-red text-xl"></i>
+                            </div>
+                            <h4 class="font-bold">ISO 9001</h4>
+                        </div>
+                        <p class="text-gray-700">Quality Management Systems ensuring consistent quality and customer satisfaction.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center mr-4">
+                                <i class="fas fa-leaf text-primary-red text-xl"></i>
+                            </div>
+                            <h4 class="font-bold">ISO 14001</h4>
+                        </div>
+                        <p class="text-gray-700">Environmental Management Systems for sustainable business operations.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center mr-4">
+                                <i class="fas fa-hard-hat text-primary-red text-xl"></i>
+                            </div>
+                            <h4 class="font-bold">ISO 45001</h4>
+                        </div>
+                        <p class="text-gray-700">Occupational Health and Safety Management Systems for safer workplaces.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center mr-4">
+                                <i class="fas fa-lock text-primary-red text-xl"></i>
+                            </div>
+                            <h4 class="font-bold">ISO 27001</h4>
+                        </div>
+                        <p class="text-gray-700">Information Security Management Systems protecting valuable data assets.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center mr-4">
+                                <i class="fas fa-tools text-primary-red text-xl"></i>
+                            </div>
+                            <h4 class="font-bold">ISO 22301</h4>
+                        </div>
+                        <p class="text-gray-700">Business Continuity Management Systems for organizational resilience.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center mr-4">
+                                <i class="fas fa-balance-scale text-primary-red text-xl"></i>
+                            </div>
+                            <h4 class="font-bold">ISO 37001</h4>
+                        </div>
+                        <p class="text-gray-700">Anti-Bribery Management Systems for ethical business practices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Planning Section -->
+    <section id="strategic-planning" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary-red font-semibold uppercase tracking-wider">Strategic Planning</span>
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mt-2 mb-6 section-heading">Building Your Roadmap to Success</h2>
+                <p class="text-gray-700">We help organizations create clear, actionable strategic plans that align vision with execution, driving sustainable growth and performance.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <div class="mb-10">
+                        <h3 class="text-2xl font-bold mb-4">Our Strategic Planning Approach</h3>
+                        <p class="text-gray-700 mb-6">Our strategic planning process combines rigorous analysis with creative thinking to help your organization chart a clear path forward. We facilitate inclusive planning that engages key stakeholders and creates ownership throughout your organization.</p>
+                        <p class="text-gray-700">From environmental scanning to implementation planning, we provide comprehensive support at every stage of the strategic planning journey.</p>
+                    </div>
+                    
+                    <div class="space-y-4 mb-10">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-primary-red flex items-center justify-center">
+                                    <span class="text-white font-bold">1</span>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-lg">Situational Assessment</h4>
+                                <p class="text-gray-700">Comprehensive analysis of internal capabilities and external environment to establish a clear foundation for planning.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-primary-red flex items-center justify-center">
+                                    <span class="text-white font-bold">2</span>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-lg">Strategic Framework Development</h4>
+                                <p class="text-gray-700">Collaboratively crafting vision, mission, values, and strategic objectives aligned with organizational purpose.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-primary-red flex items-center justify-center">
+                                    <span class="text-white font-bold">3</span>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-lg">Action Planning</h4>
+                                <p class="text-gray-700">Creating detailed implementation roadmaps with clear accountabilities, timelines, and resource allocation.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-primary-red flex items-center justify-center">
+                                    <span class="text-white font-bold">4</span>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-lg">Performance Monitoring</h4>
+                                <p class="text-gray-700">Establishing measurement frameworks and review processes to track progress and adapt as needed.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="cta-button">Schedule a Strategy Session</a>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="feature-card bg-gray-50 p-6 rounded-lg shadow-md">
+                        <div class="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-bullseye feature-icon text-primary-red text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2">Vision & Mission Development</h4>
+                        <p class="text-gray-700">Creating inspiring and clear guiding statements that align and motivate teams.</p>
+                    </div>
+                    
+                    <div class="feature-card bg-gray-50 p-6 rounded-lg shadow-md">
+                        <div class="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-chart-line feature-icon text-primary-red text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2">Growth Strategy</h4>
+                        <p class="text-gray-700">Identifying and prioritizing pathways for sustainable business expansion.</p>
+                    </div>
+                    
+                    <div class="feature-card bg-gray-50 p-6 rounded-lg shadow-md">
+                        <div class="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-users-cog feature-icon text-primary-red text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2">Organizational Design</h4>
+                        <p class="text-gray-700">Structuring teams and processes to optimize performance and culture.</p>
+                    </div>
+                    
+                    <div class="feature-card bg-gray-50 p-6 rounded-lg shadow-md">
+                        <div class="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-sync-alt feature-icon text-primary-red text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2">Change Management</h4>
+                        <p class="text-gray-700">Facilitating smooth transitions during strategic transformation initiatives.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Policy Development Section -->
+    <section id="policy-development" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary-red font-semibold uppercase tracking-wider">Policy Development</span>
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mt-2 mb-6 section-heading">Crafting Effective Policies & Procedures</h2>
+                <p class="text-gray-700">We help organizations develop clear, comprehensive policies that ensure compliance, guide decision-making, and streamline operations.</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center md:space-x-12">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <img src="images/policies.jpg" alt="Policy Development" class="rounded-lg shadow-xl w-full">
+                </div>
+                
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold mb-6">Comprehensive Policy Solutions</h3>
+                    <p class="text-gray-700 mb-6">Our policy development services help organizations establish clear guidelines and procedures that promote consistency, mitigate risks, and ensure regulatory compliance. We work closely with stakeholders to understand your unique context and create policies that are practical, effective, and easily implemented.</p>
+                    <p class="text-gray-700 mb-8">From conception to implementation, we provide end-to-end support to ensure your policies achieve their intended outcomes.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                        <div class="bg-white p-4 rounded-md shadow-sm">
+                            <h4 class="font-bold mb-2 flex items-center">
+                                <i class="fas fa-clipboard-check text-primary-red mr-2"></i>
+                                Corporate Policies
+                            </h4>
+                            <p class="text-sm text-gray-700">Governance, ethics, and operational guidelines that align with corporate values.</p>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-md shadow-sm">
+                            <h4 class="font-bold mb-2 flex items-center">
+                                <i class="fas fa-user-shield text-primary-red mr-2"></i>
+                                HR Policies
+                            </h4>
+                            <p class="text-sm text-gray-700">Comprehensive employment frameworks covering everything from recruitment to performance management.</p>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-md shadow-sm">
+                            <h4 class="font-bold mb-2 flex items-center">
+                                <i class="fas fa-lock text-primary-red mr-2"></i>
+                                Risk & Compliance
+                            </h4>
+                            <p class="text-sm text-gray-700">Policies to mitigate risks and ensure adherence to regulations and standards.</p>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-md shadow-sm">
+                            <h4 class="font-bold mb-2 flex items-center">
+                                <i class="fas fa-cogs text-primary-red mr-2"></i>
+                                Standard Operating Procedures
+                            </h4>
+                            <p class="text-sm text-gray-700">Step-by-step operational instructions that ensure consistency and quality.</p>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="cta-button">Discuss Your Policy Needs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training & Capacity Building Section -->
+    <section id="training" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary-red font-semibold uppercase tracking-wider">Training & Capacity Building</span>
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mt-2 mb-6 section-heading">Developing Your Team's Capabilities</h2>
+                <p class="text-gray-700">We offer comprehensive training programs designed to equip your team with the knowledge, skills, and tools they need to excel.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-1">
+                    <div class="sticky top-32">
+                        <h3 class="text-2xl font-bold mb-6">Our Training Philosophy</h3>
+                        <p class="text-gray-700 mb-6">We believe that effective training goes beyond knowledge transfer to create genuine capability and confidence. Our approach combines theory, practice, and application to ensure learning sticks and translates into improved performance.</p>
+                        <p class="text-gray-700 mb-6">All our training programs are custom-designed to meet your specific needs, delivered by experienced trainers who bring deep subject matter expertise and real-world experience.</p>
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                            <h4 class="font-bold text-lg mb-4">Why Choose Our Training</h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-red mt-1 mr-3"></i>
+                                    <p>Practical, hands-on learning experiences</p>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-red mt-1 mr-3"></i>
+                                    <p>Customized content addressing your challenges</p>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-red mt-1 mr-3"></i>
+                                    <p>Flexible delivery options: in-person, virtual, or hybrid</p>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-red mt-1 mr-3"></i>
+                                    <p>Post-training support to reinforce learning</p>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary-red mt-1 mr-3"></i>
+                                    <p>Measurable outcomes and ROI</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-2">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Training Card 1 -->
+                        <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+                            <div class="p-6">
+                                <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center mb-4">
+                                    <i class="fas fa-certificate text-primary-red text-xl"></i>
+                                </div>
+                                <h4 class="text-xl font-bold mb-3">ISO Standards Training</h4>
+                                <p class="text-gray-700 mb-4">Comprehensive workshops on understanding and implementing various ISO standards within your organization.</p>
+                                <ul class="space-y-2 mb-4">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-primary-red mt-1 mr-2"></i>
+                                        <p class="text-sm">ISO 9001, 14001, 45001 awareness</p>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-primary-red mt-1 mr-2"></i>
+                                        <p class="text-sm">Internal auditor certification</p>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-primary-red mt-1 mr-2"></i>
+                                        <p class="text-sm">Management system implementation</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Training Card 2 -->
+                        <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+                            <div class="p-6">
+                                <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center mb-4">
+                                    <i class="fas fa-users text-primary-red text-xl"></i>
+                                </div>
+                                <h4 class="text-xl font-bold mb-3">Leadership Development</h4>
+                                <p class="text-gray-700 mb-4">Programs designed to enhance management capabilities and develop effective leadership skills at all levels.</p>
+                                <ul class="space-y-2 mb-4">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-primary-red mt-1 mr-2"></i>
+                                        <p class="text-sm">Strategic leadership</p>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-primary-red mt-1 mr-2"></i>
+                                        <p class="text-sm">Change management</p>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-primary-red mt-1 mr-2"></i>
+                                        <p class="text-sm">Team building & performance</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Training Card 3 -->
+                        <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+                            <div class="p-6">
+                                <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center mb-4">
+                                    <i class="fas fa-chart-pie text-primary-red text-xl"></i>
+                                </div>
+                                <h4 class="text-xl font-bold mb-3">Business Process Improvement</h4>
+                                <p class="text-gray-700 mb-4">Workshops on identifying, analyzing, and optimizing key organizational processes for efficiency and effectiveness.</p>
+                                <ul class="space-y-2 mb-4">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-primary-red mt-1 mr-2"></i>
+                                        <p class="text-sm">Process mapping & analysis</p>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-primary-red mt-1 mr-2"></i>
+                                        <p class="text-sm">Lean principles application</p>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-primary-red mt-1 mr-2"></i>
+                                        <p class="text-sm">Continuous improvement methods</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Training Card 4 -->
+                        <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+                            <div class="p-6">
+                                <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center mb-4">
+                                    <i class="fas fa-shield-alt text-primary-red text-xl"></i>
+                                </div>
+                                <h4 class="text-xl font-bold mb-3">Risk Management</h4>
+                                <p class="text-gray-700 mb-4">Training programs focused on identifying, assessing, and mitigating organizational risks effectively.</p>
+                                <ul class="space-y-2 mb-4">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-primary-red mt-1 mr-2"></i>
+                                        <p class="text-sm">Risk assessment techniques</p>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-primary-red mt-1 mr-2"></i>
+                                        <p class="text-sm">Risk-based thinking</p>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-angle-right text-primary-red mt-1 mr-2"></i>
+                                        <p class="text-sm">Business continuity planning</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10 text-center">
+                        <a href="#contact" class="cta-button">Inquire About Training Programs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section id="consultation" class="py-20 bg-primary-black text-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-2/3 mb-10 md:mb-0">
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6">Ready to Transform Your Business?</h2>
+                    <p class="text-lg opacity-90 mb-6">Schedule a consultation with our expert team to discuss how our services can address your specific needs and challenges.</p>
+                    <p class="opacity-80">Our consultants will work with you to understand your unique situation and develop a tailored approach for your organization.</p>
+                </div>
+                <div class="md:w-1/3 text-center">
+                    <a href="#contact" class="inline-block bg-primary-red text-white font-bold py-4 px-8 rounded-lg hover:bg-opacity-90 transition duration-300 transform hover:-translate-y-1 hover:shadow-lg">Book Your Free Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+   <section class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-primary-red font-semibold uppercase tracking-wider">FAQ</span>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mt-2 mb-6 section-heading">Frequently Asked Questions</h2>
+            <p class="text-gray-700">Get answers to common questions about our services and approach.</p>
+        </div>
+        
+        <div class="max-w-3xl mx-auto">
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item border border-gray-200 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-md">
+                    <button class="faq-question w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-primary-red focus:ring-opacity-50">
+                        <span class="font-bold text-lg">How long does it typically take to implement an ISO management system?</span>
+                        <i class="faq-icon fas fa-plus text-primary-red transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 border-t-0 border-primary-red">
+                        <p class="text-gray-700">Implementation timeframes vary based on organization size, complexity, and existing systems. Typically, a complete ISO management system implementation takes 6-12 months from initial assessment to certification readiness. Our approach focuses on efficient implementation while ensuring thorough integration with your operations.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="faq-item border border-gray-200 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-md">
+                    <button class="faq-question w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-primary-red focus:ring-opacity-50">
+                        <span class="font-bold text-lg">What makes your strategic planning process different?</span>
+                        <i class="faq-icon fas fa-plus text-primary-red transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 border-t-0 border-primary-red">
+                        <p class="text-gray-700">Our strategic planning process stands out through its practical, implementation-focused approach. We don't just create plans that look good on paper; we develop actionable roadmaps with clear metrics, responsibilities, and timelines. We also emphasize stakeholder engagement throughout the process to build organization-wide ownership and commitment.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="faq-item border border-gray-200 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-md">
+                    <button class="faq-question w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-primary-red focus:ring-opacity-50">
+                        <span class="font-bold text-lg">Can you customize training programs for our specific industry?</span>
+                        <i class="faq-icon fas fa-plus text-primary-red transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 border-t-0 border-primary-red">
+                        <p class="text-gray-700">Absolutely! All our training programs are customized to your industry, organizational context, and specific challenges. We conduct thorough needs assessments before designing any program, incorporating relevant case studies, examples, and exercises that directly relate to your business environment. This ensures maximum relevance and practical application of learning.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="faq-item border border-gray-200 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-md">
+                    <button class="faq-question w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-primary-red focus:ring-opacity-50">
+                        <span class="font-bold text-lg">How do you ensure the policies you develop are actually implemented?</span>
+                        <i class="faq-icon fas fa-plus text-primary-red transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 border-t-0 border-primary-red">
+                        <p class="text-gray-700">We take a holistic approach to policy development that extends beyond just creating documents. Our process includes stakeholder engagement, practical implementation planning, communication strategies, and training components. We also provide implementation support and monitoring frameworks to track adoption and effectiveness, making adjustments as needed to ensure policies achieve their intended outcomes.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="faq-item border border-gray-200 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-md">
+                    <button class="faq-question w-full flex items-center justify-between p-6 text-left focus:outline-none focus:ring-2 focus:ring-primary-red focus:ring-opacity-50">
+                        <span class="font-bold text-lg">Do you work with both small businesses and large corporations?</span>
+                        <i class="faq-icon fas fa-plus text-primary-red transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 border-t-0 border-primary-red">
+                        <p class="text-gray-700">Yes, we serve organizations of all sizes, from small businesses to large corporations. We tailor our approach, methodologies, and solutions to match the scale, complexity, and specific needs of each client. Our consultants have experience across diverse industries and organizational structures, allowing us to provide valuable insights regardless of your company size.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const faqItems = document.querySelectorAll(".faq-item");
+
+            faqItems.forEach(item => {
+                const questionBtn = item.querySelector(".faq-question");
+                const answer = item.querySelector(".faq-answer");
+                const icon = item.querySelector(".faq-icon");
+
+                // Hide all answers initially
+                answer.style.display = "none";
+
+                questionBtn.addEventListener("click", () => {
+                    const isOpen = answer.style.display === "block";
+
+                    // Close all answers
+                    faqItems.forEach(faq => {
+                        faq.querySelector(".faq-answer").style.display = "none";
+                        faq.querySelector(".faq-icon").classList.remove("fa-minus");
+                        faq.querySelector(".faq-icon").classList.add("fa-plus");
+                        faq.querySelector(".faq-icon").style.transform = "rotate(0deg)";
+                        faq.classList.remove("border-primary-red");
+                        faq.classList.add("border-gray-200");
+                    });
+
+                    // Toggle current
+                    if (!isOpen) {
+                        answer.style.display = "block";
+                        icon.classList.remove("fa-plus");
+                        icon.classList.add("fa-minus");
+                        icon.style.transform = "rotate(180deg)";
+                        item.classList.remove("border-gray-200");
+                        item.classList.add("border-primary-red");
+                        item.classList.add("shadow-md");
+                    }
+                });
+            });
+        });
+    </script>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary-red font-semibold uppercase tracking-wider">Get In Touch</span>
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mt-2 mb-6 section-heading">Contact Us</h2>
+                <p class="text-gray-700">Have questions about our services? Ready to start a project? Contact us today for a free consultation.</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row shadow-xl rounded-lg overflow-hidden">
+                <div class="lg:w-1/3 bg-primary-black text-white p-8 lg:p-12">
+                    <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i class="fas fa-map-marker-alt text-primary-red"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p>121 Main Street</p>
+                                <p>Cape Town, 8001</p>
+                                <p>South Africa</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i class="fas fa-phone text-primary-red"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p>+27 21 123 4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i class="fas fa-envelope text-primary-red"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p>info@aabusinessconsultants.co.za</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12">
+                        <h4 class="text-lg font-bold mb-4">Office Hours</h4>
+                        <div class="space-y-2">
+                            <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
+                            <p>Saturday: By appointment only</p>
+                            <p>Sunday: Closed</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12">
+                        <h4 class="text-lg font-bold mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-red transition-colors duration-300 flex items-center justify-center">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-red transition-colors duration-300 flex items-center justify-center">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-primary-red transition-colors duration-300 flex items-center justify-center">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-2/3 bg-white p-8 lg:p-12">
+                    <form>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-red focus:border-transparent" placeholder="Your name">
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-red focus:border-transparent" placeholder="Your email">
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-red focus:border-transparent" placeholder="Your phone number">
+                            </div>
+                            
+                            <div>
+                                <label for="organization" class="block text-gray-700 font-medium mb-2">Organization</label>
+                                <input type="text" id="organization" name="organization" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-red focus:border-transparent" placeholder="Your organization">
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="service" class="block text-gray-700 font-medium mb-2">Service of Interest</label>
+                            <select id="service" name="service" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-red focus:border-transparent">
+                                <option value="">Select a service</option>
+                                <option value="iso">ISO Management Systems</option>
+                                <option value="strategic">Strategic Planning</option>
+                                <option value="policy">Policy Development</option>
+                                <option value="training">Training & Capacity Building</option>
+                                <option value="other">Other (please specify)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-red focus:border-transparent" placeholder="Tell us about your project or inquiry"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-primary-red text-white font-bold py-3 px-6 rounded-md hover:bg-opacity-90 transition duration-300">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary-black text-white pt-16 pb-8">
+    <div class="container mx-auto px-6">
+        <div class="flex flex-wrap justify-between">
+            <!-- Company Info -->
+            <div class="w-full md:w-1/2 lg:w-1/3 mb-10 md:mb-0">
+                <h3 class="text-2xl font-bold mb-6 font-heading">AA Business Consultants</h3>
+                <p class="mb-6 text-gray-400 max-w-xs">South Africa's leading consulting firm specializing in public sector policy development, strategic planning, and ISO management systems.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-primary-red transition-colors duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-primary-red transition-colors duration-300">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-primary-red transition-colors duration-300">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="w-full md:w-1/2 lg:w-1/3 mb-10 md:mb-0">
+                <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+                <ul class="space-y-3">
+                    <li><a href="index.html" class="text-gray-400 hover:text-primary-red transition-colors duration-300">Home</a></li>
+                    <li><a href="#service-overview" class="text-gray-400 hover:text-primary-red transition-colors duration-300">Overview</a></li>
+                    <li><a href="#service-categories" class="text-gray-400 hover:text-primary-red transition-colors duration-300">Categories</a></li>
+                    <li><a href="#iso-management" class="text-gray-400 hover:text-primary-red transition-colors duration-300">ISO Management</a></li>
+                    <li><a href="#strategic-planning" class="text-gray-400 hover:text-primary-red transition-colors duration-300">Strategic Planning</a></li>
+                    <li><a href="#policy-development" class="text-gray-400 hover:text-primary-red transition-colors duration-300">Policy Development</a></li>
+                    <li><a href="#training" class="text-gray-400 hover:text-primary-red transition-colors duration-300">Training</a></li>
+                    <li><a href="#contact" class="text-gray-400 hover:text-primary-red transition-colors duration-300">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="w-full md:w-full lg:w-1/3">
+                <h4 class="text-lg font-bold mb-6">Contact Us</h4>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <i class="fas fa-map-marker-alt mt-1 mr-3 text-primary-red"></i>
+                        <span class="text-gray-400">123 Business Park, Sandton<br>Johannesburg, 2196<br>South Africa</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-phone-alt mr-3 text-primary-red"></i>
+                        <span class="text-gray-400">+27 11 123 4567</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-envelope mr-3 text-primary-red"></i>
+                        <span class="text-gray-400">info@aabusinessconsultants.co.za</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="border-gray-800 my-10">
+
+        <!-- Copyright -->
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-500 mb-4 md:mb-0">&copy; 2025 AA Business Consultants. All rights reserved.</p>
+            <div class="flex space-x-6">
+                <a href="privacy-policy.html" class="text-gray-500 hover:text-primary-red transition-colors duration-300">Privacy Policy</a>
+                <a href="terms-of-service.html" class="text-gray-500 hover:text-primary-red transition-colors duration-300">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- JavaScript -->
+    <script>
+        // Sticky Navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2');
+                nav.classList.remove('p-8');
+            } else {
+                nav.classList.add('p-8');
+                nav.classList.remove('py-2');
+            }
+        });
+        
+        // Mobile Menu Toggle
+        document.querySelector('.hamburger-menu').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+        
+        // Tabs
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const tabId = button.getAttribute('data-tab');
+                
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                button.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // FAQ Accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                
+                faqItem.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
